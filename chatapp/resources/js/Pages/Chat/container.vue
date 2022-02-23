@@ -9,9 +9,8 @@
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <welcome />
-                    <message-container />
-                    <input-message :room="currentRoom" />
+                    <message-container :messages="messages"/>
+                    <input-message :room="currentRoom" v-on:messagesent="getMessages()"/>
                 </div>
             </div>
         </div>
@@ -20,14 +19,12 @@
 
 <script>
     import AppLayout from '@/Layouts/AppLayout.vue'
-    import Welcome from '@/Jetstream/Welcome.vue'
     import MessageContainer from './messageContainer.vue'
     import InputMessage from './inputMessage.vue'
 
     export default {
         components: {
             AppLayout,
-            Welcome,
             MessageContainer,
             InputMessage
         },
