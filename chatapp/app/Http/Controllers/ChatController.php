@@ -29,6 +29,7 @@ class ChatController extends Controller
     	$newMessage->save();
 
         broadcast( new NewChatMessage( $newMessage ))->toOthers();
+        
     	return $newMessage;
     }
 }

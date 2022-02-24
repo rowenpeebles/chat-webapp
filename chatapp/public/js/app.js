@@ -22935,13 +22935,13 @@ __webpack_require__.r(__webpack_exports__);
       if (this.currentRoom.id) {
         var vm = this;
         this.getMessages();
-        window.Echo["private"]("chat." + this.currentRoom.id).listen('.message.new', function (e) {
+        window.Echo["private"]('chat.' + this.currentRoom.id).listen('.message.new', function (e) {
           vm.getMessages();
         });
       }
     },
     disconnect: function disconnect(room) {
-      window.Echo.leave("chat." + room.id);
+      window.Echo.leave('chat.' + room.id);
     },
     getRooms: function getRooms() {
       var _this = this;

@@ -50,14 +50,14 @@
                 if( this.currentRoom.id ) {
                     let vm = this;
                     this.getMessages();
-                    window.Echo.private("chat." + this.currentRoom.id)
+                    window.Echo.private('chat.' + this.currentRoom.id)
                     .listen('.message.new', e => {
                         vm.getMessages();
                     })
                 }
             },
             disconnect( room ) {
-                window.Echo.leave("chat." + room.id);
+                window.Echo.leave('chat.' + room.id);
             },
             getRooms() {
                 axios.get('/chat/rooms')
