@@ -2,7 +2,8 @@
     <app-layout title="Chat">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                <chat-room-selection v-if="currentRoom.id" :rooms="chatRooms" :currentRoom="currentRoom" v-on:roomChanged="setRoom( $event )"/>
+                <chat-room-selection v-if="currentRoom.id" :rooms="chatRooms" 
+                :currentRoom="currentRoom" v-on:roomChanged="setRoom( $event )"/>
             </h2>
         </template>
 
